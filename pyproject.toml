@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "laconia"
+version = "0.1.0"
+description = "URL Shortener powered by aiohttp."
+authors = ["Egor Molodik <ave2@me.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7.0"
+asyncio = "^3.4"
+aiohttp = "^3.4"
+pyyaml = "^3.13"
+aioredis = "^1.2"
+marshmallow = "^2.18"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.4"
+black = {version = "^18.3-alpha.0",allows-prereleases = true}
+mypy = "^0.650.0"
+wemake-python-styleguide = "^0.5.1"
+pytest-mock = "^1.10"
+pytest-asyncio = "^0.9.0"
+pytest-aiohttp = "^0.3.0"
