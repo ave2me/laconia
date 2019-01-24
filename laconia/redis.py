@@ -20,6 +20,13 @@ async def redis_client(app):
 
 
 async def create_link(client: Redis, link: str) -> str:
+    """
+    Generate and save short link key to Redis.
+
+    :param client: redis client instance
+    :param link: URL
+    :return: link id
+    """
     key = generate_key()
     await client.set(key, link)
 
@@ -27,6 +34,13 @@ async def create_link(client: Redis, link: str) -> str:
 
 
 async def get_link(client: Redis, key: str) -> str:
+    """
+    Get redirect URL by key.
+
+    :param client: redis client instance
+    :param key: link id
+    :return: redirect URL
+    """
     link = await client.get(key, encoding="ascii")
 
     return link

@@ -1,8 +1,4 @@
-from marshmallow import (
-    Schema,
-    fields,
-    validate,
-)
+from marshmallow import Schema, fields, validate
 
 
 class RedisConfigSchema(Schema):
@@ -11,7 +7,9 @@ class RedisConfigSchema(Schema):
     """
 
     host = fields.String(required=True)
-    port = fields.Int(missing=6379, validate=validate.Range(min=1024, max=65535))
+    port = fields.Int(
+        missing=6379, validate=validate.Range(min=1024, max=65535)  # noqa: Z432
+    )
 
 
 class ConfigSchema(Schema):
