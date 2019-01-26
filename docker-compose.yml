@@ -11,8 +11,6 @@ services:
   redis:
     image: redis:latest
     restart: always
-    environment:
-      - MONGO_INITDB_DATABASE=default
     volumes:
       - redis-data:/data
 
